@@ -5,11 +5,14 @@ var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
 var obj = {};
+var username
 
 $('#start').on('click',function(){
-	if ($('input').val() !== ""){
-		var username = $('input').val()
-		$('#name').css('visibility','hidden')
+
+	if ($('input').val() === ''){
+		username = "random"
+	}
+		//$('#name').css('visibility','hidden')
 		$('#play').css('visibility','visible')
 		$('#stop').css('visibility','visible')
 
@@ -63,8 +66,8 @@ $('#start').on('click',function(){
 		computer = commputerPicks[randomNum];
 		$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
 		})
-	}
-		alert('username cant be empty')
+	
+		
 })
 
 

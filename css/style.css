@@ -1,5 +1,5 @@
 body{
-	
+	background-color:black;
 	
 }
 
@@ -10,8 +10,7 @@ body{
   margin: 0px;
   justify-content: center;
   align-items: center;
-  visibility:hidden;
-
+  
 }
 
 #stop{
@@ -21,7 +20,7 @@ body{
 #name{
   display: flex;
   grid-template-rows: center;
-  margin: 0px;
+  margin: 50px;
   justify-content: center;
   align-items: center;
 
@@ -29,12 +28,41 @@ body{
 
 img{
 	margin: 25px;
-	border-radius: 25px;
+	border-radius: 40px;
 }
 
 p{
-	color:black;
+	color:white;
+	font-weight: bold;
+	font-size: 30px
 }
 
+#rock:hover {
+   box-shadow: 0 0 75px blue; 
+}
+#paper:hover {
+   box-shadow: 0 0 75px yellow; 
+}
+#scissor:hover {
+   box-shadow: 0 0 75px red; 
+}
 
+#stop{
+	width:100px;
+	height: 30px;
+	border-radius: 20px;
+}
+
+#name input{
+	width:120px;
+	height: 30px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#start {
+	width:100px;
+	height: 30px;
+	border-radius: 10px;
+}
 
