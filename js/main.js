@@ -4,29 +4,30 @@ var randomNum = Math.floor(Math.random() * 3);
 var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
+var obj = {};
 
 $('#start').on('click',function(){
-	var username = $('input').value()
-	$('#play').attr('display','unset')
-})
+	if ($('input').val() !== ""){
+		var username = $('input').val()
+		$('#name').css('visibility','hidden')
+		$('#play').css('visibility','visible')
+		$('#stop').css('visibility','visible')
 
 
+	$('.go').on('click',function(){
 
-$('.go').on('click',function(){
+			$('#rock').on('click',function(){
+				userPicks = 'rock'
+			})
 
-		$('#rock').on('click',function(){
-			userPicks = 'rock'
-		})
+			$('#paper').on('click',function(){
+				userPicks = 'paper'
+			})
 
-		$('#paper').on('click',function(){
-			userPicks = 'paper'
-		})
+			$('#scissor').on('click',function(){
+				userPicks = 'scissor'
+			})
 
-		$('#scissor').on('click',function(){
-			userPicks = 'scissor'
-		})
-
-		//
 
 		if (userPicks === computer) {
 
@@ -39,7 +40,6 @@ $('.go').on('click',function(){
 		} else if (userPicks === 'rock' && computer === 'scissors') {
 			wins++
 		  alert("You win!");
-
 
 		} else if (userPicks === 'scissors' && computer === 'rock') {
 			loses++
@@ -62,7 +62,14 @@ $('.go').on('click',function(){
 		randomNum = Math.floor(Math.random() * 3);
 		computer = commputerPicks[randomNum];
 		$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
+		})
+	}
+		alert('username cant be empty')
 })
+
+
+
+
 
 
 //alert('Your choice is '+userPicks+', the computers choice is '+computer);

@@ -7,8 +7,29 @@ body{
 
   display: flex;
   grid-template-rows: center;
-  margin: 170px;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  visibility:hidden;
 
+}
+
+#stop{
+	visibility:hidden;
+}
+
+#name{
+  display: flex;
+  grid-template-rows: center;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+img{
+	margin: 25px;
+	border-radius: 25px;
 }
 
 p{
