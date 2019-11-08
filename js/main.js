@@ -4,15 +4,16 @@ var randomNum = Math.floor(Math.random() * 3);
 var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
-//var obj = {};
-//var username;
+
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'top-end',
+  position: 'bottom-end',
   showConfirmButton: false,
   timer: 3000
 })
+
+
 
 $('#start').on('click',function(){
 
