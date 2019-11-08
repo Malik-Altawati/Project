@@ -1,0 +1,19 @@
+body{
+	
+	
+}
+
+#play{
+
+  display: flex;
+  grid-template-rows: center;
+  margin: 170px;
+
+}
+
+p{
+	color:black;
+}
+
+
+
