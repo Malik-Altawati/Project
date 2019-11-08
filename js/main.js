@@ -5,6 +5,7 @@ var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
 
+$('#reset').hide()
 
 const Toast = Swal.mixin({
   toast: true,
@@ -13,99 +14,92 @@ const Toast = Swal.mixin({
   timer: 3000
 })
 
+$('#start').on('click', function() {
+	
+	$('#start').hide()
+	$('#reset').show()
+
+  $('#reset').css('visibility', 'visible')
+
+  $('.go').on('click', function() {
+    randomNum = Math.floor(Math.random() * 3);
+    computer = commputerPicks[randomNum];
+
+    $('#rock').on('click', function() {
+      userPicks = 'rock'
+    })
+
+    $('#paper').on('click', function() {
+      userPicks = 'paper'
+    })
+
+    $('#scissor').on('click', function() {
+      userPicks = 'scissors'
+    })
 
 
-$('#start').on('click',function(){
+    if (userPicks === computer) {
 
-		randomNum = Math.floor(Math.random() * 3);
-		computer = commputerPicks[randomNum];
+      Toast.fire({
+        icon: 'question',
+        title: 'Same Choice'
+      })
 
-	$('#reset').css('visibility','visible')
-
-	$('.go').on('click',function(){
-
-			$('#rock').on('click',function(){
-				userPicks = 'rock'
-			})
-
-			$('#paper').on('click',function(){
-				userPicks = 'paper'
-			})
-
-			$('#scissor').on('click',function(){
-				userPicks = 'scissor'
-			})
+    } else if (userPicks === 'paper' && computer === 'rock') {
+      wins++
+      Toast.fire({
+        icon: 'success',
+        title: 'You Are The Winner'
+      })
 
 
-		if (userPicks === computer) {
-
-		  Toast.fire({
-			 icon: 'question',
-			title: 'Same Choice'
-			})
-
-		} else if (userPicks === 'paper' && computer === 'rock') {
-		  wins++
-		   Toast.fire({
-			 icon: 'success',
-			title: 'You Are The Winner'
-			})
+    } else if (userPicks === 'rock' && computer === 'scissors') {
+      wins++
+      Toast.fire({
+        icon: 'success',
+        title: 'You Are The Winner'
+      })
 
 
-		} else if (userPicks === 'rock' && computer === 'scissors') {
-			wins++
-		   Toast.fire({
-			 icon: 'success',
-			title: 'You Are The Winner'
-			})
+    } else if (userPicks === 'scissors' && computer === 'rock') {
+      loses++
+      Toast.fire({
+        icon: 'error',
+        title: 'Computer Wins'
+      })
 
 
-		} else if (userPicks === 'scissors' && computer === 'rock') {
-			loses++
-		  Toast.fire({
-			 icon: 'error',
-			title: 'Computer Wins'
-			})
+    } else if (userPicks === 'rock' && computer === 'paper') {
+      loses++
+      Toast.fire({
+        icon: 'error',
+        title: 'Computer Wins'
+      })
+
+    } else if (userPicks === 'paper' && computer === 'scissors') {
+      loses++
+      Toast.fire({
+        icon: 'error',
+        title: 'Computer Wins'
+      })
+
+    } else if (userPicks === 'scissors' && computer === 'paper') {
+      wins++
+      Toast.fire({
+        icon: 'success',
+        title: 'You Are The Winner'
+      })
+
+    }
+    $('p').html("You Score is : " + wins + "  Computer Score is : " + loses)
 
 
-		} else if (userPicks === 'rock' && computer === 'paper') {
-			loses++
-		   Toast.fire({
-			 icon: 'error',
-			title: 'Computer Wins'
-			})
+  })
 
-		} else if (userPicks === 'paper' && computer === 'scissors') {
-			loses++
-		   Toast.fire({
-			 icon: 'error',
-			title: 'Computer Wins'
-			})
 
-		} else if (userPicks === 'scissors' && computer === 'paper') {
-			wins++
-		   Toast.fire({
-			 icon: 'success',
-			title: 'You Are The Winner'
-			})
-
-		} 
-		$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
-
-		
-		})
-
-		
 })
 
 
-$('#reset').on('click',function(){
-	 location.reload();
+$('#reset').on('click', function() {
+  location.reload();
 })
-
-
-
-
-
-
-

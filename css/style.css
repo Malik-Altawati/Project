@@ -209,9 +209,7 @@ h1:nth-child(3) {
   
 }
 
-#reset{
-	visibility:hidden;
-}
+
 
 #name{
   display: flex;
