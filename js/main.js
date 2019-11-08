@@ -17,13 +17,10 @@ const Toast = Swal.mixin({
 
 $('#start').on('click',function(){
 
-	if ($('input').val() === ''){
-		username = "random"
-	}
-		
-		
-		$('#reset').css('visibility','visible')
+		randomNum = Math.floor(Math.random() * 3);
+		computer = commputerPicks[randomNum];
 
+	$('#reset').css('visibility','visible')
 
 	$('.go').on('click',function(){
 
@@ -92,12 +89,10 @@ $('#start').on('click',function(){
 			title: 'You Are The Winner'
 			})
 
-
 		} 
-
-		randomNum = Math.floor(Math.random() * 3);
-		computer = commputerPicks[randomNum];
 		$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
+
+		
 		})
 
 		
@@ -105,9 +100,7 @@ $('#start').on('click',function(){
 
 
 $('#reset').on('click',function(){
-	wins = 0
-	loses = 0
-	$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
+	 location.reload();
 })
 
 
