@@ -4,17 +4,24 @@ var randomNum = Math.floor(Math.random() * 3);
 var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
-var obj = {};
-var username
+//var obj = {};
+//var username;
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+})
 
 $('#start').on('click',function(){
 
 	if ($('input').val() === ''){
 		username = "random"
 	}
-		//$('#name').css('visibility','hidden')
-		$('#play').css('visibility','visible')
-		$('#stop').css('visibility','visible')
+		
+		
+		$('#reset').css('visibility','visible')
 
 
 	$('.go').on('click',function(){
@@ -34,31 +41,56 @@ $('#start').on('click',function(){
 
 		if (userPicks === computer) {
 
-		  alert("Tie!");
+		  Toast.fire({
+			 icon: 'question',
+			title: 'Do You Read My Mind'
+			})
 
 		} else if (userPicks === 'paper' && computer === 'rock') {
 		  wins++
-		  alert("You win!");
+		   Toast.fire({
+			 icon: 'success',
+			title: 'You Are The Winner'
+			})
+
 
 		} else if (userPicks === 'rock' && computer === 'scissors') {
 			wins++
-		  alert("You win!");
+		   Toast.fire({
+			 icon: 'success',
+			title: 'You Are The Winner'
+			})
+
 
 		} else if (userPicks === 'scissors' && computer === 'rock') {
 			loses++
-		  alert("You lose!");
+		  Toast.fire({
+			 icon: 'error',
+			title: 'ops Computer got you this time'
+			})
+
 
 		} else if (userPicks === 'rock' && computer === 'paper') {
 			loses++
-		  alert("You lose!");
+		   Toast.fire({
+			 icon: 'error',
+			title: 'ops Computer got you this time'
+			})
 
 		} else if (userPicks === 'paper' && computer === 'scissors') {
 			loses++
-		  alert("You lose!");
+		   Toast.fire({
+			 icon: 'error',
+			title: 'ops Computer got you this time'
+			})
 
 		} else if (userPicks === 'scissors' && computer === 'paper') {
 			wins++
-		  alert("You win!");
+		   Toast.fire({
+			 icon: 'success',
+			title: 'You Are The Winner'
+			})
+
 
 		} 
 
@@ -66,8 +98,15 @@ $('#start').on('click',function(){
 		computer = commputerPicks[randomNum];
 		$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
 		})
-	
+
 		
+})
+
+
+$('#reset').on('click',function(){
+	wins = 0
+	loses = 0
+	$('p').html("You Score is : "+ wins +"  Computer Score is : "+ loses)
 })
 
 
@@ -75,4 +114,4 @@ $('#start').on('click',function(){
 
 
 
-//alert('Your choice is '+userPicks+', the computers choice is '+computer);
+

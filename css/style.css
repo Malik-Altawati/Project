@@ -1,5 +1,5 @@
 body{
-	background-color:black;
+	background-color:#444;
 	
 }
 
@@ -13,7 +13,7 @@ body{
   
 }
 
-#stop{
+#reset{
 	visibility:hidden;
 }
 
@@ -47,7 +47,7 @@ p{
    box-shadow: 0 0 75px red; 
 }
 
-#stop{
+#reset{
 	width:100px;
 	height: 30px;
 	border-radius: 20px;
