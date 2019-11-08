@@ -41,7 +41,7 @@ $('#start').on('click',function(){
 
 		  Toast.fire({
 			 icon: 'question',
-			title: 'Do You Read My Mind'
+			title: 'Same Choice'
 			})
 
 		} else if (userPicks === 'paper' && computer === 'rock') {
@@ -64,7 +64,7 @@ $('#start').on('click',function(){
 			loses++
 		  Toast.fire({
 			 icon: 'error',
-			title: 'ops Computer got you this time'
+			title: 'Computer Wins'
 			})
 
 
@@ -72,14 +72,14 @@ $('#start').on('click',function(){
 			loses++
 		   Toast.fire({
 			 icon: 'error',
-			title: 'ops Computer got you this time'
+			title: 'Computer Wins'
 			})
 
 		} else if (userPicks === 'paper' && computer === 'scissors') {
 			loses++
 		   Toast.fire({
 			 icon: 'error',
-			title: 'ops Computer got you this time'
+			title: 'Computer Wins'
 			})
 
 		} else if (userPicks === 'scissors' && computer === 'paper') {
