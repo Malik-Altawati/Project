@@ -4,8 +4,9 @@ var randomNum = Math.floor(Math.random() * 3);
 var computer = commputerPicks[randomNum];
 var wins = 0;
 var loses = 0;
-
+//reset button is hidden by default untill you start playing
 $('#reset').hide()
+//this part below is for the alert called from sweetAlert Library
 
 const Toast = Swal.mixin({
   toast: true,
